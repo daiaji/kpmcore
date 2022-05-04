@@ -451,7 +451,7 @@ bool SfdiskBackend::updateDevicePartitionTable(Device &d, const QJsonObject &jso
         // Read the maximum number of GPT partitions
         qint32 maxEntries;
         QByteArray gptHeader;
-        CopySourceDevice source(d, 512, 1023);
+        CopySourceDevice source(d, 4096, 1023);
 
         ExternalCommand readCmd;
         gptHeader = readCmd.readData(source);
